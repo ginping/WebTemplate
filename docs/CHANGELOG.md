@@ -1,3 +1,3 @@
-# Changelog
+# 变更记录
 
-Record released behavior and operationally relevant changes here. Keep unreleased implementation notes in issues or commits.
+在此记录已经发布的行为变化和影响运维的变更。尚未发布的实现细节保留在 Issue 或提交记录中。

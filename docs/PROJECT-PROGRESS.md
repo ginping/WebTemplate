@@ -1,20 +1,20 @@
-# Project Progress
+# 项目进展
 
-## Current stage
+## 当前阶段
 
-The repository is a reusable web foundation with no product domain, authentication, payment, or persistent storage.
+仓库是可复用的 Web 应用基础工程，不包含具体产品领域、身份认证、支付或持久化存储。
 
-## Active priorities
+## 当前优先级
 
-1. Replace the starter page with one coherent product idea.
-2. Preserve the locale, theme, responsive, accessibility, and test contracts.
-3. Add only the smallest Cloudflare capability required by the first usable workflow.
+1. 用一个完整、聚焦的产品想法替换起始页面。
+2. 保持语言、主题、响应式、可访问性和测试契约。
+3. 只添加首个可用流程真正需要的最小 Cloudflare 能力。
 
-## Current facts
+## 当前事实
 
-- Next.js runs locally and deploys to Cloudflare Workers through OpenNext.
-- English is unprefixed; other public locales use a URL prefix.
-- Production deployment is manual until the target repository has a reviewed Cloudflare environment and least-privilege secrets. Automatic deployment from `main` is an explicit opt-in.
-- No database, bucket, KV namespace, payment integration, GCP resource, or external backend exists.
+- Next.js 可以在本地运行，并通过 OpenNext 部署到 Cloudflare Workers。
+- 英文 URL 不带语言前缀，其他公开语言使用语言前缀。
+- 在目标仓库完成 Cloudflare 环境和最小权限 secrets 审核之前，生产部署保持手动触发。是否允许 `main` 自动部署必须显式决定。
+- 当前不存在数据库、存储桶、KV namespace、支付集成、GCP 资源或外部后端。
 
-Keep durable decisions in `docs/adr/`, operations in `docs/runbooks/`, and release history in `docs/CHANGELOG.md`.
+长期有效的决策写入 `docs/adr/`，运维操作写入 `docs/runbooks/`，发布历史写入 `docs/CHANGELOG.md`。

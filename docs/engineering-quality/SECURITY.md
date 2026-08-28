@@ -1,12 +1,12 @@
-# Security Contract
+# 安全契约
 
-Browser input, URLs, cookies, headers, uploads, and third-party responses are untrusted. Only server code may access secrets or privileged Cloudflare bindings; `NEXT_PUBLIC_*` is always public.
+浏览器输入、URL、Cookie、请求头、上传内容和第三方响应都不可信。只有服务端代码可以访问 secrets 或高权限 Cloudflare bindings；所有 `NEXT_PUBLIC_*` 变量都会公开到客户端。
 
-- Validate input at every Route Handler or Server Action boundary.
-- Return stable, non-sensitive errors and never expose provider payloads or stack traces.
-- Use least-privilege Cloudflare and GitHub tokens. Production secrets never enter pull-request jobs.
-- Keep objects private by default and add authentication before exposing user-owned data.
-- Keep the baseline response headers in `next.config.ts`; design a nonce- or hash-based script policy before rendering untrusted HTML or adding third-party scripts.
-- Keep dependencies current and minimal. CI rejects high-severity advisories.
+- 在每个 Route Handler 或 Server Action 边界验证输入。
+- 返回稳定且不敏感的错误信息，不暴露供应商原始响应或堆栈。
+- Cloudflare 和 GitHub Token 遵循最小权限原则。生产 secrets 不得进入 Pull Request job。
+- 对象默认保持私有；公开用户数据前必须先引入身份认证和授权。
+- 保留 `next.config.ts` 中的基础安全响应头。在渲染不可信 HTML 或引入第三方脚本前，先设计基于 nonce 或 hash 的脚本策略。
+- 依赖保持精简并及时更新。CI 拒绝存在高危安全公告的依赖树。
 
-For an exposure, rotate secrets, disable the affected path, preserve non-sensitive evidence, and follow the [incident runbook](../runbooks/incident-response.md).
+发生信息暴露时，立即轮换 secrets、禁用受影响路径、保留不含敏感信息的证据，并按照[故障响应手册](../runbooks/incident-response.md)处理。

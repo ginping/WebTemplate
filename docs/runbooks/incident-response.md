@@ -1,11 +1,11 @@
-# Incident Response
+# 故障响应
 
-1. Confirm hostname, route, start time, client, and Worker version.
-2. Check `/api/health` separately from the product route.
-3. Review Worker logs without copying secrets or personal data.
-4. Compare the active version with the last accepted deployment.
-5. Roll back when the current version is the likely cause and the prior version is known healthy.
-6. Verify health, English, Chinese, and the affected workflow.
-7. Add a regression test and update the canonical runbook.
+1. 确认域名、路由、故障开始时间、客户端环境和 Worker 版本。
+2. 分别检查 `/api/health` 和产品路由。
+3. 查看 Worker 日志，不复制 secrets 或个人数据。
+4. 对比当前运行版本与上一个已验收部署。
+5. 当前版本很可能是故障原因且存在已知健康版本时，立即回滚到该版本。
+6. 验证健康检查、英文路径、中文路径和受影响流程。
+7. 添加回归测试，并更新唯一的规范 runbook。
 
-CI success, upload success, or a local check does not prove live recovery.
+CI 通过、上传成功或本地检查通过，都不能单独证明线上已经恢复。

@@ -1,11 +1,11 @@
-# Engineering Quality
+# 工程质量
 
-Evaluate meaningful changes across experience, performance, security, cost, and stability.
+所有实质性变更都需要从用户体验、性能、安全、成本和稳定性五个方面评估。
 
-1. Define the user-visible outcome and failure modes.
-2. Add the smallest relevant automated test.
-3. Run `pnpm check:fast` while iterating.
-4. Run `pnpm check` before merging.
-5. Deploy one revision, verify health and critical routes, and retain a rollback target.
+1. 定义用户可感知的结果和失败模式。
+2. 添加能够保护目标契约的最小自动化测试。
+3. 开发过程中运行 `pnpm check:fast`。
+4. 合并前运行 `pnpm check`。
+5. 每次只部署一个 revision，验证健康状态和关键路由，并保留可回滚版本。
 
-Simplicity is a quality property. Avoid infrastructure, dependencies, caches, queues, and abstractions before a measured need exists. Use [the review checklist](REVIEW-CHECKLIST.md) and [security contract](SECURITY.md).
+简单也是质量要求。在出现可衡量的需求之前，不引入额外基础设施、依赖、缓存、队列和抽象。变更时使用[评审清单](REVIEW-CHECKLIST.md)和[安全契约](SECURITY.md)。

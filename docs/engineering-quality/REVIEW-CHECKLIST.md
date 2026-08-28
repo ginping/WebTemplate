@@ -1,23 +1,23 @@
-# Engineering Quality Review Checklist
+# 工程质量评审清单
 
-## Experience
+## 用户体验
 
-- Happy, empty, loading, error, retry, and recovery states are defined.
-- English and Chinese, all typed dictionaries, mobile width, keyboard focus, dark mode, and reduced motion are checked.
-- Errors explain the next action without exposing internals.
+- 正常、空数据、加载、错误、重试和恢复状态均有明确行为。
+- 已检查中英文、全部类型化字典、移动端宽度、键盘焦点、暗黑模式和减少动态效果。
+- 错误信息能够说明下一步操作，同时不暴露内部实现。
 
-## Performance, cost, and security
+## 性能、成本和安全
 
-- Client JavaScript, media, fonts, and third-party scripts are necessary and bounded.
-- Server reads avoid waterfalls and duplicate internal HTTP hops.
-- Lists, payloads, and stored objects have limits.
-- Secrets stay out of browser bundles, URLs, logs, screenshots, and test artifacts.
-- Inputs are validated and Cloudflare/GitHub permissions are least privilege.
+- 客户端 JavaScript、媒体、字体和第三方脚本确有必要，并且体积和使用范围有边界。
+- 服务端读取避免瀑布请求和重复的内部 HTTP 跳转。
+- 列表、请求体和存储对象都有容量限制。
+- secrets 不进入浏览器 bundle、URL、日志、截图和测试产物。
+- 输入经过验证，Cloudflare 和 GitHub 权限遵循最小权限原则。
 
-## Stability and release
+## 稳定性和发布
 
-- Relevant unit or browser coverage protects the contract.
-- `pnpm check` passes from a clean install.
-- Runtime-sensitive changes pass Cloudflare preview.
-- Verification and rollback are known before production deployment.
-- Current facts, architecture, and operations are documented canonically.
+- 相关单元测试或浏览器测试能够保护变更契约。
+- 从全新安装状态运行 `pnpm check` 可以通过。
+- 运行时敏感变更通过 Cloudflare 本地预览。
+- 生产部署前已经明确验收方法和回滚方式。
+- 当前事实、架构和运维操作都记录在唯一的规范文档中。

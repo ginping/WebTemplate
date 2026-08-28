@@ -1,6 +1,6 @@
-# Runbook Index
+# 运维手册索引
 
-| Runbook | Use it when |
+| 手册 | 适用场景 |
 | --- | --- |
-| [Cloudflare deployment](runbooks/cloudflare-deploy.md) | Configuring, deploying, verifying, or rolling back the Worker |
-| [Incident response](runbooks/incident-response.md) | A release or production route is unhealthy |
+| [Cloudflare 部署](runbooks/cloudflare-deploy.md) | 配置、部署、验收或回滚 Worker |
+| [故障响应](runbooks/incident-response.md) | 发布或生产路由出现异常 |
