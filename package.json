@@ -1,0 +1,74 @@
+{
+  "name": "web-template",
+  "version": "0.1.0",
+  "description": "Production-minded Next.js starter for lightweight Cloudflare applications.",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginping/WebTemplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ginping/WebTemplate/issues"
+  },
+  "homepage": "https://github.com/ginping/WebTemplate#readme",
+  "keywords": [
+    "nextjs",
+    "cloudflare-workers",
+    "starter",
+    "template"
+  ],
+  "scripts": {
+    "bootstrap": "node scripts/install-git-hooks.mjs",
+    "dev": "next dev --turbopack",
+    "dev:test": "next dev --turbopack --port 3100",
+    "build": "next build",
+    "start": "next start",
+    "build:cloudflare": "opennextjs-cloudflare build",
+    "preview": "pnpm build:cloudflare && wrangler dev",
+    "deploy": "pnpm build:cloudflare && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv",
+    "format": "biome check --write .",
+    "format:check": "biome format .",
+    "lint": "eslint . --max-warnings=0 && biome lint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "docs:check": "node scripts/docs-check.mjs",
+    "check:fast": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm docs:check",
+    "check": "pnpm check:fast && pnpm build && pnpm test:e2e"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "next-themes": "^0.4.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@biomejs/biome": "^2.5.11",
+    "@opennextjs/cloudflare": "^1.19.8",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "jsdom": "^28.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.127.0"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd"
+    ]
+  }
+}
